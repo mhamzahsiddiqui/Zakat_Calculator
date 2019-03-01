@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity
                Intent Email = new Intent(Intent.ACTION_SEND);
             Email.setType("text/email");
             Email.putExtra(Intent.EXTRA_EMAIL,
-                    new String[]{"raza.ibraheem1997@gmail.com"});  //developer 's email
+                    new String[]{"mohd.hamzah.cse.2017@miet.ac.in"});
             Email.putExtra(Intent.EXTRA_SUBJECT,
-                    "Contact"); // Email 's Subject
-            Email.putExtra(Intent.EXTRA_TEXT, "Dear Ibraheem Raza," + "");  //Email 's Greeting text
+                    "Contact");
+            Email.putExtra(Intent.EXTRA_TEXT, "Dear Hamzah Siddiqui," + "");
             startActivity(Intent.createChooser(Email, "Send Feedback:"));
             }
                 /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -89,8 +89,6 @@ public class MainActivity extends AppCompatActivity
                 if(tamt>nisab) {
                     zpaid = (0.025 * (tamt - nisab));
                     TextView amtpaid = (TextView) findViewById(R.id.amtpd);
-                    //TextView tamt = (TextView) findViewById(R.id.tam);
-                    //tamt.setText(Double.toString(amt));
 
                     amtpaid.setText(Double.toString(zpaid));
                 }
@@ -118,19 +116,16 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -141,11 +136,11 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_gallery) {
             String url = "https://www.google.com/search?q=what+is+zakat";
 
@@ -153,7 +148,6 @@ public class MainActivity extends AppCompatActivity
             intent.setAction(Intent.ACTION_VIEW);
             intent.addCategory(Intent.CATEGORY_BROWSABLE);
 
-            //pass the url to intent data
             intent.setData(Uri.parse(url));
 
             startActivity(intent);
@@ -165,7 +159,6 @@ public class MainActivity extends AppCompatActivity
             intent.setAction(Intent.ACTION_VIEW);
             intent.addCategory(Intent.CATEGORY_BROWSABLE);
 
-            //pass the url to intent data
             intent.setData(Uri.parse(url));
 
             startActivity(intent);
@@ -177,7 +170,6 @@ public class MainActivity extends AppCompatActivity
             intent.setAction(Intent.ACTION_VIEW);
             intent.addCategory(Intent.CATEGORY_BROWSABLE);
 
-            //pass the url to intent data
             intent.setData(Uri.parse(url));
 
             startActivity(intent);
@@ -185,8 +177,22 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_share) {
+            Intent myIntent = new Intent(Intent.ACTION_SEND);
+            myIntent.setType("text/plain");
+            String sharebody = "Zakat Calculator";
+            String sharesub = "Android app to calculate Zakat";
+            myIntent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
+            myIntent.putExtra(Intent.EXTRA_TEXT,sharebody);
+            startActivity(Intent.createChooser(myIntent, "Share Using"));
 
         } else if (id == R.id.nav_send) {
+            Intent myIntent = new Intent(Intent.ACTION_SEND);
+            myIntent.setType("text/plain");
+            String sharebody = "Zakat Calculator";
+            String sharesub = "Android app to calculate Zakat";
+            myIntent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
+            myIntent.putExtra(Intent.EXTRA_TEXT,sharebody);
+            startActivity(Intent.createChooser(myIntent, "Share Using"));
 
         }
 
@@ -197,14 +203,13 @@ public class MainActivity extends AppCompatActivity
 
     public void goToUrl(View view){
 
-        //Get url from tag
+
         String url = (String)view.getTag();
 
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
         intent.addCategory(Intent.CATEGORY_BROWSABLE);
 
-        //pass the url to intent data
         intent.setData(Uri.parse(url));
 
         startActivity(intent);

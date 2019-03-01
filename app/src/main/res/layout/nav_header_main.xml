@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:srcCompat="@drawable/dp"
-        android:tag="https://www.facebook.com/ibraheem.raza.7"
+        android:tag="https://www.linkedin.com/in/mhamzahsiddiqui/"
         android:onClick="goToUrl"
         tools:ignore="MissingConstraints" />
 
