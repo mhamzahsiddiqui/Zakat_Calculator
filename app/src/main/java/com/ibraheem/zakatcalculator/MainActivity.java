@@ -20,7 +20,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     double nisab =345958.14;
-    double gval,gquan,sval,squan,amt,tamt,zpaid;
+    double gval=0.0,gquan=0.0,sval=0.0,squan=0.0,amt=0.0,tamt=0.0,zpaid=0.0;
     EditText gvalInput;
     EditText gquanInput;
     EditText svalInput;
