@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity
 
                 tamt=((gval/10)*gquan)+((sval/10)*squan)+amt;
                 if(tamt>nisab) {
-                    zpaid = (0.025 * (tamt - nisab));
+                    zpaid = (0.025 * tamt) ;
                     TextView amtpaid = (TextView) findViewById(R.id.amtpd);
 
                     amtpaid.setText(Double.toString(zpaid));
